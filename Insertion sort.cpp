@@ -18,7 +18,15 @@ int main() {
     printArray(array, n);
 
     // insertion sort
+   
+    cout<< "Insertion Sort:\n";
+    clock_t start = clock();
     insertionSort(array, n);
+    clock_t stop = clock();
+
+    long long clockdif = stop-start;
+    double timeTaken = (double)clockdif / CLOCKS_PER_SEC;
+    cout<<(fixed)<<setprecision(8)<<"Time taken = "<< timeTaken <<endl<<endl;
 
     cout << "After sorting:  ";
     printArray(array, n);
