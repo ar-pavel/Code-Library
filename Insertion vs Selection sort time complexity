@@ -95,3 +95,5 @@ void generateDecending(int A[], int length){
     for(int i=length; i>=0; i--)
         A[i]=i;
 }
+
+// Almost every cases insertion sort is much faster than selesction sort
