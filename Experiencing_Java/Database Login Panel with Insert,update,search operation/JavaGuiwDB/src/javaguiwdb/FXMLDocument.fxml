@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="392.99992207031755" prefWidth="341.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="javaguiwdb.FXMLDocumentController">
+  <children>
+    <StackPane id="operation" layoutX="0.0" layoutY="0.0" prefHeight="392.0000999999975" prefWidth="340.9999000000025" visible="true">
+      <children>
+        <TabPane fx:id="operation" disable="false" opacity="1.0" prefHeight="391.9998779296875" prefWidth="341.0" rotateGraphic="false" side="TOP" tabClosingPolicy="UNAVAILABLE" visible="true" StackPane.alignment="CENTER">
+          <effect>
+            <InnerShadow />
+          </effect>
+          <tabs>
+            <Tab text="Insert">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                    <Label layoutX="33.0" layoutY="16.0" text="ID" />
+                    <Label id="Iname" layoutX="33.0" layoutY="51.0" text="Name" />
+                    <Label id="Iaddress" layoutX="33.0" layoutY="88.0" text="Adress" />
+                    <TextField fx:id="Iid" layoutX="101.0" layoutY="16.0" prefWidth="200.0" />
+                    <TextArea fx:id="Iaddress" layoutX="101.0" layoutY="96.0" prefWidth="200.0" wrapText="true" />
+                    <TextField fx:id="Iname" layoutX="101.0" layoutY="51.0" prefWidth="200.0" />
+                    <Button fx:id="Isave" layoutX="147.0" layoutY="283.0" mnemonicParsing="false" onAction="#insertData" text="Save" />
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Update">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" visible="true">
+                  <children>
+                    <Label layoutX="37.0" layoutY="34.0" text="ID" />
+                    <Label layoutX="37.0" layoutY="99.0" text="New Name" />
+                    <Label layoutX="37.0" layoutY="130.0" text="Adress" />
+                    <TextField fx:id="Uid" layoutX="105.0" layoutY="34.0" prefWidth="200.0" />
+                    <TextArea fx:id="unAddress" layoutX="105.0" layoutY="130.0" prefHeight="110.0" prefWidth="200.00009999999747" wrapText="true" />
+                    <TextField fx:id="unName" layoutX="105.0" layoutY="96.0" prefWidth="200.0" />
+                    <Button fx:id="Usave" layoutX="149.0" layoutY="280.0" mnemonicParsing="false" onAction="#updateData" text="Save" />
+                    <Label layoutX="37.0" layoutY="64.0" text="New ID" />
+                    <TextField id="Unid" fx:id="unId" layoutX="105.0" layoutY="64.0" prefWidth="200.0" />
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Search">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                    <Label layoutX="37.0" layoutY="34.0" text="ID" />
+                    <Label layoutX="37.0" layoutY="96.0" text="Result" />
+                    <TextField fx:id="sId" layoutX="105.0" layoutY="34.0" onAction="#resetDisplay" prefWidth="200.0" />
+                    <TextArea fx:id="sResult" layoutX="105.0" layoutY="96.0" prefHeight="176.0" prefWidth="200.0" wrapText="true" />
+                    <Button fx:id="sReset" layoutX="151.0" layoutY="301.0" mnemonicParsing="false" onAction="#resetDisplay" text="Reset" />
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+          </tabs>
+        </TabPane>
+        <AnchorPane fx:id="welcomePage" blendMode="MULTIPLY" focusTraversable="true" prefHeight="392.0" prefWidth="341.0" visible="true" StackPane.alignment="CENTER">
+          <children>
+            <Pane disable="true" layoutX="0.0" layoutY="0.0" prefHeight="392.0000999999975" prefWidth="341.0" />
+            <Label layoutX="19.0" layoutY="154.0" text="User Name" />
+            <TextField fx:id="userName" layoutX="104.0" layoutY="151.0" onAction="#logIn" prefWidth="200.0">
+              <tooltip>
+                <Tooltip text="Case sensitive" />
+              </tooltip>
+            </TextField>
+            <Text fill="#1000cc" focusTraversable="true" fontSmoothingType="GRAY" layoutX="90.0" layoutY="83.0" strikethrough="false" stroke="#003d99" strokeLineJoin="MITER" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Admin " textAlignment="CENTER" underline="false">
+              <effect>
+                <InnerShadow color="#34ffa3" />
+              </effect>
+              <font>
+                <Font size="20.0" />
+              </font>
+            </Text>
+            <Text fx:id="invalid" cache="false" layoutX="57.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="" textAlignment="CENTER" textOrigin="CENTER" />
+            <Label layoutX="23.0" layoutY="203.0" text="Password" />
+            <PasswordField fx:id="password" layoutX="104.0" layoutY="203.0" onAction="#logIn" prefWidth="200.0" />
+            <Button fx:id="login" layoutX="143.0" layoutY="253.0" mnemonicParsing="false" onAction="#logIn" text="Login">
+              <tooltip>
+                <Tooltip text="Click to confirm" />
+              </tooltip>
+            </Button>
+          </children>
+          <effect>
+            <InnerShadow choke="0.3472222222222222" color="#004150" height="15.708333333333334" radius="7.354166666666667" width="15.708333333333334" />
+          </effect>
+        </AnchorPane>
+      </children>
+    </StackPane>
+  </children>
+</AnchorPane>

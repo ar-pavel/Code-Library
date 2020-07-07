@@ -1,0 +1,71 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int myStack[100], top = -1;
+
+void push(int n) {
+    if (top >= 99) {
+        cout << "Beyond limit! \n";
+        return;
+    }
+    myStack[++top] = n;
+}
+
+void pop() {
+    if (top < 0) {
+        cout << "Stack Underflow! \n";
+        return;
+    }
+    cout << myStack[top]<<"\n";
+    top--;
+}
+
+void peek() {
+    if (top < 0) {
+        cout << "Stack Underflow! \n";
+        return;
+    }
+    cout << myStack[top]<<"\n";
+}
+
+void Display(){
+     if (top < 0) {
+        cout << "Stack Underflow! \n";
+        return;
+    }
+     for(int i = top; i>=0; i--){
+         cout<<myStack[i]<<" ";
+     }
+    
+}
+int main() {
+    int n;
+    cout << "Input 1 top push \n"
+            "Input 2 to pop \n"
+            "Input 3 to peek \n"
+            "Input 4 to Display Stack\n";
+    while (cin >> n && n != -1) {
+        if(n==1){
+            cout<<"Insert value to push : ";
+            int a;
+            cin>>a;
+            push(a);
+        }
+        else if( n==2){
+            cout<<"POP: ";
+            pop();
+        }
+        else if(n==3){
+            cout<<"PEEK: ";
+            peek();
+        }
+        else if(n==4){
+            cout<<"Printing the full Stack form top to buttom: ";
+                    Display();
+        }
+        else
+            break;
+    }
+    return 0;
+}

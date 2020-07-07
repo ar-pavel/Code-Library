@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>     
+#include <iostream>
+#include <cstdlib>
+#include <string>
+#include <cstdio>
+#include <map>
+#include <vector>
+
+
+using namespace std;
+
+/*
+ * 
+ */
+
+int main() {
+    for(int tc=1; tc<=10001; tc++ )
+    {
+        long long int N;
+        cin>>N;
+        if(N==0)
+            break;
+        N = ceil ( (3 + sqrt (9 + ( 8 * N))) /2);
+        cout<<"Case "<<tc<<": ";
+        cout<<N<<endl;
+    }
+    return 0;
+}
+

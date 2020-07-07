@@ -1,0 +1,110 @@
+//#include <bits/stdc++.h>
+#include <iostream>
+
+using namespace std;
+
+class stack {
+    int myStack[100];
+    int top;
+public:
+
+    stack() {
+         top = -1;
+    }
+
+    stack(const stack &a) {
+
+    }
+
+    void push(int n);
+    void pop();
+    void peek();
+    void Display();
+    void IsEmpty();
+    void IsFull();
+};
+
+void stack::push(int n) {
+    if (top >= 99) {
+        cout << "Beyond limit! \n";
+        return;
+    }
+    myStack[++top] = n;
+}
+
+void stack::pop() {
+    if (top < 0) {
+        cout << "Stack Underflow! \n";
+        return;
+    }
+    cout << myStack[top] << "\n";
+    top--;
+}
+
+void stack::peek() {
+    if (top < 0) {
+        cout << "Stack Underflow! \n";
+        return;
+    }
+    cout << myStack[top] << "\n";
+}
+
+void stack::Display() {
+    if (top < 0) {
+        cout << "Stack Underflow! \n";
+        return;
+    }
+    for (int i = top; i >= 0; i--) {
+        cout << myStack[i] << " ";
+    }
+}
+
+void stack::IsEmpty(){
+    if(top<0)
+        cout<<"Stack is Empty! \n";
+    else
+         cout<<"No \n";
+    
+       // IsFull();
+}
+
+void stack::IsFull(){
+    if(top==100-1)
+        cout<<"Stack is Full! \n";
+    else
+        cout<<"No \n";
+        
+}
+
+int main() {
+    int n;
+    stack s;
+    cout << "Input 1 top push \n"
+            "Input 2 to pop \n"
+            "Input 3 to peek \n"
+            "Input 4 to Display Stack\n"
+            "Input 5 to cheek stack condition \n";
+    while (cin >> n && n != -1) {
+        if (n == 1) {
+            cout << "Insert value to push : ";
+            int a;
+            cin>>a;
+            s.push(a);
+        } else if (n == 2) {
+            cout << "POP: ";
+            s.pop();
+        } else if (n == 3) {
+            cout << "PEEK: ";
+            s.peek();
+        } else if (n == 4) {
+            cout << "Printing the full Stack form top to buttom: ";
+            s.Display();
+        } else if(n==5){
+            s.IsEmpty();
+        }else if(n==6){
+            s.IsFull();
+        }else
+            break;
+    }
+    return 0;
+}

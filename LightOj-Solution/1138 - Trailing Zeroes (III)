@@ -1,0 +1,43 @@
+    #include <bits/stdc++.h>
+     
+    using namespace std;
+     
+    long long findIt(long long n){
+         long long sum=0;
+        while(n){
+            sum+=n/5;
+            n/=5;
+        }
+        return sum;
+    }
+     
+    int main(){
+        #ifndef ONLINE_JUDGE
+            freopen("in.txt","r",stdin);
+            freopen("out.txt","w",stdout);
+        #endif
+       
+        int tc,t(1);
+        for(scanf("%d",&tc); tc; ++t,--tc){
+     
+            long long num;
+            cin>>num;
+           
+            long long ans,l = 1, r = 5000000000,mid,val;
+           
+            while(l<r){
+                mid = (l+r)/2;
+                val = findIt(mid);
+                if(val>=num){
+                    ans = mid;
+                    r = mid;
+                }
+                else
+                    l= mid+1;
+            }
+            findIt(ans)==num?printf("Case %d: %lld\n",t,ans):printf("Case %d: impossible\n",t);
+        }
+     
+        return 0;
+    }      
+     

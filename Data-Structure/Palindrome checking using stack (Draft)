@@ -1,0 +1,126 @@
+/**
+**                                   **
+**   Assignment on Stack             **
+**                                   **
+**   Submitted by-                   **
+**   Atikur Rahman                   **
+**   ID-2016200000058                **
+**   Course Code - CSE1034           **
+**   Sec- 3                          **
+**                                   **
+**/
+
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+class MyStack
+{
+public:
+    MyStack* prev;
+    char Digit;
+
+    MyStack()
+    {
+
+    }
+
+    MyStack(const MyStack &st)
+    {
+        Digit = st.Digit;
+        prev = st.prev;
+
+    }
+
+    ~MyStack()
+    {
+
+    }
+};
+
+MyStack* Stack;
+int top = 0;
+int bal = 0;
+string m,s;
+
+void push(char val);
+int isEmpty();
+void Display();
+void pop();
+
+int main()
+{
+    Stack = new MyStack;
+    int n;
+    while(true)
+    {
+        s="";
+        cin>>n>>m;
+
+        for(int i=0; i<n; i++)
+        {
+            push(m[i]);
+        }
+        //Display();
+        for(int i=0; i<n; i++)
+        {
+            pop();
+        }
+        // cout<<s<<endl;
+        (m==s)?cout<<"Palindrome \n" : cout<<"Not Palindrome \n";
+        // cout<<isEmpty()<<" "<<bal<<endl;
+    }
+}
+
+void push(char val)
+{
+    MyStack* tp;
+    tp = new MyStack;
+    tp->Digit = val;
+
+    if(isEmpty()) tp->prev = NULL;
+
+    else    tp->prev = Stack;
+
+    Stack = tp;
+    top++;
+}
+
+int isEmpty()               ///Function to check to Stack is empty or not
+{
+    return (top==0)?1:0;
+}
+
+void Display()          ///Function to Display the Stack
+{
+    if(isEmpty())
+    {
+        cout<<"Stack: Stack underflow \n";
+        return;
+    }
+    MyStack* tp = Stack;
+    while(tp->prev != NULL)
+    {
+        cout<<tp->Digit<<" ";
+        tp = tp->prev;
+    }
+    cout<<tp->Digit<<"\n";
+}
+
+void pop()          ///Function to POP data
+{
+    if(isEmpty())
+    {
+        cout<<"Stack: Stack underflow \n";
+        return;
+    }
+
+    MyStack* tp = Stack;
+    //cout<<"Pop : "<<tp->Digit<<"\n";
+    s += tp->Digit;
+    Stack = tp->prev;
+    //cout<<s[bal++]<<endl;
+    top--;
+
+}

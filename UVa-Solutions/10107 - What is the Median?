@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>     
+#include <iostream>
+#include <cstdlib>
+#include <string>
+#include <cstdio>
+#include <map>
+#include <vector>
+
+
+using namespace std;
+
+/*
+ * Author - Pavel
+ */
+
+int main() {
+    
+    vector<long long int> ar;
+    int len=1,a;
+   
+    while(cin>>a)
+    {
+ 
+       ar.push_back(a);
+     
+     sort(ar.begin(), ar.end());
+     
+     //cout<<"len "<<len<<endl;
+         if(len==1)
+         {
+             cout<<ar[0];
+         }
+         else if(len%2==0)
+          {
+
+                cout<<(ar[len/2-1]+ar[(len/2)])/2;
+          }
+          else if(len%2!=0)
+           {
+                cout<<ar[(len/2)];
+           }
+     
+     cout<<endl;
+     len++;
+     
+    }
+        
+    return 0;
+}

@@ -1,0 +1,56 @@
+/** In the name of Allah, the Most Gracious and the Most Merciful **/
+
+/**
+    Code of :
+
+    Author : AR Pavel
+   
+    Southeast University.
+
+                                **/
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+int main(){
+    string s;
+    int t=0;
+    while(getline(cin,s)){
+        if(t!=0) cout<<endl;
+        t=1;
+        map<int,int> mp;
+        pair<int,int> pr[1010];
+        int ss=s.size();
+        for(int i=0;i<ss;i++){
+            mp[s[i]]++;
+        }
+        map<int,int>::iterator it;
+        int i=0;
+        for(it=mp.begin();it!=mp.end();it++){
+            pr[i].first=it->second;
+            pr[i].second=it->first;
+            i++;
+        }
+        sort(pr,pr+i);
+        int f=0,x;
+        for(int j=0;j<i;j++){
+            if(pr[j].first==pr[j+1].first&&f==0){
+                f=1;
+                x=j;
+                continue;
+            }
+            else if(pr[j].first==pr[j+1].first) continue;
+            else if(pr[j].first!=pr[j+1].first&&f==1){
+                for(int m=j;m>=x;m--){
+                    printf("%d %d\n",pr[m].second,pr[m].first);
+                }
+                f=0;
+                continue;
+            }
+            printf("%d %d\n",pr[j].second,pr[j].first);
+        }
+    }
+    return 0;
+}

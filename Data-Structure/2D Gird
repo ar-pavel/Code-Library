@@ -1,0 +1,56 @@
+#include <bits/stdc++.h>     
+#include <iostream>
+
+using namespace std;
+
+int form(int n)
+{
+    int ar[n][n];
+    int p=0,len=n-1,i=1;
+    while(i<=n*n){
+        
+        for(int j=p;j<=len; j++){
+            ar[p][j]=i++;   //Print first row;
+        }
+        
+        for(int j=p+1;j<=len; j++){
+            ar[j][len]=i++;    //right side
+        }
+        
+        for(int j=len-1; j>=p; j--){
+            ar[len][j]=i++;
+        }
+        
+        for(int j=len-1; j>p; j--){
+            ar[j][p]=i++;
+        }
+        
+    p++;
+    len = len-1;    
+    }
+    for(int i = 0; i<n; i++){
+        for(int j=0; j<n; j++)
+            cout<<ar[i][j]<<"\t";
+        cout<<"\n";
+    }
+    //return ar[n][n];
+    
+}
+
+int main()
+{
+    int n,m;
+    cin>>n;
+    
+    //int ar[n][n];
+    form(n);
+    
+    return 0;
+}
+
+/**
+3
+1 2 3 
+8 9 4
+7 6 5
+**/

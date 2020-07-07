@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="389.999755859375" prefWidth="324.9998779296875" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="tictac.FXMLDocumentController">
+  <children>
+    <AnchorPane id="AnchorPane" layoutX="5.0" layoutY="57.0">
+      <children>
+        <GridPane alignment="CENTER" layoutX="1.0" layoutY="3.0" prefHeight="272.0" prefWidth="314.0" visible="true">
+          <children>
+            <Button fx:id="button1" disable="false" mnemonicParsing="false" onAction="#change" prefHeight="85.0" prefWidth="90.0" text="" textAlignment="CENTER" visible="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
+              <font>
+                <Font size="30.0" fx:id="x1" />
+              </font>
+            </Button>
+            <Button id="button1" fx:id="button4" disable="false" font="$x1" mnemonicParsing="false" onAction="#change" prefHeight="85.0" prefWidth="90.0" text="" textAlignment="CENTER" visible="true" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Button id="button1" fx:id="button7" disable="false" font="$x1" mnemonicParsing="false" onAction="#change" prefHeight="85.0" prefWidth="90.0" text="" textAlignment="CENTER" visible="true" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <Button id="button1" fx:id="button2" disable="false" font="$x1" mnemonicParsing="false" onAction="#change" prefHeight="85.0" prefWidth="90.0" text="" textAlignment="CENTER" visible="true" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Button id="button1" fx:id="button3" disable="false" font="$x1" mnemonicParsing="false" onAction="#change" prefHeight="85.0" prefWidth="90.0" text="" textAlignment="CENTER" visible="true" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <Button id="button1" fx:id="button5" disable="false" font="$x1" mnemonicParsing="false" onAction="#change" prefHeight="85.0" prefWidth="90.0" text="" textAlignment="CENTER" visible="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button id="button1" fx:id="button6" disable="false" font="$x1" mnemonicParsing="false" onAction="#change" prefHeight="85.0" prefWidth="90.0" text="" textAlignment="CENTER" visible="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button id="button1" fx:id="button8" disable="false" font="$x1" mnemonicParsing="false" onAction="#change" prefHeight="85.0" prefWidth="90.0" text="" textAlignment="CENTER" visible="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Button id="button1" fx:id="button9" disable="false" font="$x1" mnemonicParsing="false" onAction="#change" prefHeight="85.0" prefWidth="90.0" text="" textAlignment="CENTER" visible="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="105.0" minWidth="10.0" prefWidth="105.0" />
+            <ColumnConstraints fillWidth="true" halignment="CENTER" hgrow="SOMETIMES" maxWidth="105.0" minWidth="10.0" prefWidth="105.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="104.0" minWidth="10.0" prefWidth="104.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+      </children>
+    </AnchorPane>
+    <Label fx:id="x" layoutX="89.0" layoutY="348.0" text="X -&gt;" />
+    <Label id="x" fx:id="o" layoutX="209.0" layoutY="348.0" text="O -&gt;" />
+    <Label fx:id="t5" layoutX="64.0" layoutY="6.0" prefHeight="57.0" prefWidth="200.0" text="" textAlignment="CENTER">
+      <font>
+        <Font name="System Bold" size="25.0" />
+      </font>
+    </Label>
+    <Label id="x" fx:id="X" layoutX="133.0" layoutY="348.0" text="0" />
+    <Label id="x" fx:id="O" layoutX="256.0" layoutY="348.0" text="0" />
+    <Label layoutX="39.0" layoutY="348.0" text="WIN: " />
+  </children>
+</AnchorPane>

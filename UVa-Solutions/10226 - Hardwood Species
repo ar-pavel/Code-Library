@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+
+    freopen("in.txt","r",stdin);
+    freopen("out.txt","w",stdout);
+
+    int tc;
+    cin>>tc;
+   // tc = tc*2;
+    while(tc--){
+         string p;
+        scanf(" ",&p);
+        string s;
+        map<string, double> tree;
+        map<string, double>::iterator it = tree.begin();
+        int cnt = 0;
+
+        while(getline(cin,s) && s != ""){
+            cnt++;
+            it = tree.find(s);
+            if(it == tree.end()){
+                tree.insert(pair<string,int>(s,1));
+            }
+            else
+            {
+                it->second += 1;
+            }
+
+
+        }
+
+        double rt =(double)100/cnt;
+
+        for(it = tree.begin(); it != tree.end(); it++){
+            cout<<it->first<<" "<<setprecision(4)<<fixed<<(double)it->second*rt<<endl;
+        }
+   if(tc>0) cout<<endl;
+    }
+}

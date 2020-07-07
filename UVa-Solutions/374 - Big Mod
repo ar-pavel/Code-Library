@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+import java.util.Scanner;
+import java.math.BigInteger;
+
+class Main {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner (System.in);
+        while(sc.hasNext()){
+            
+        BigInteger b, p, m;
+                       
+        b = sc.nextBigInteger();
+        p = sc.nextBigInteger();
+        m = sc.nextBigInteger();
+       // int n=sc.nextInt(); 
+        //int m=sc.nextInt();
+        
+        BigInteger ans = b.modPow(p,m);
+       // BigInteger ans = b.pow(n);
+        //ans = mod(ans,m);
+        System.out.println(ans);
+        }
+    }
+}
